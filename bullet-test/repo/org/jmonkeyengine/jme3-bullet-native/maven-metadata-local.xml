@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.jmonkeyengine</groupId>
+  <artifactId>jme3-bullet-native</artifactId>
+  <versioning>
+    <versions>
+      <version>3.2.0-custom-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20180213221116</lastUpdated>
+  </versioning>
+</metadata>

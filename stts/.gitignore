@@ -1,0 +1,10 @@
+bin
+target
+.classpath
+.project
+.settings
+*.so
+cache
+.cache-*
+*.log
+.worksheet

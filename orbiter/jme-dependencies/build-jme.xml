@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<project basedir="." default="download_nightly_build" name="OGF">
+<!-- set up the timestamp for the current nightly build to download -->
+<tstamp>
+  <format property="NIGHTLY_JME3" pattern="yyyy-MM-dd" offset="-1" unit="day" />
+</tstamp>
+<!-- set up various properties used elsewhere, this part is OS dependant, change based on your OS. -->
+<property name="zip.name" value="jME3_${NIGHTLY_JME3}.zip"/>
+<property name="zip.local.name" value="jME3_nightly_build.zip"/>
+<property name="zip.url" value="http://www.jmonkeyengine.com/nightly/"/>
+<property name="jme.version" value="3.0-SNAPSHOT"/>
+<property name="location" value="target/jme3"/>
+<property name="maven" value="mvn"/>
+<!-- now the actual downloading, unzipping and installing begins -->
+<target name="download_nightly_build">
+  <!-- first start by clearing out the old stuff -->
+  <delete dir="${location}"/>
+  <mkdir dir="${location}"/>
+  <!-- the download is only performed when there is a new nightly build.
+ This way, you can run this ant task multiple times per day without downloading the nightly build each time. -->
+  <!--get src="${zip.url}${zip.name}" dest="${location}/${zip.local.name}" usetimestamp="true" /-->
+  <exec dir="${location}" executable="wget" output="${location}/mvn_install.log" append="true">
+	<arg line="${zip.url}${zip.name} -O ${zip.local.name}"/>
+  </exec>
+  <!-- unzip the downloaded file -->
+  <unzip src="${location}/${zip.local.name}" dest="${location}" overwrite="true"/>
+  <!-- after unzipping, install the required jar files, add or remove files as needed. -->
+  <!--		<exec dir="${location}" executable="${maven}" output="${location}/mvn_install.log" append="true">
+		<arg line="install:install-file -DartifactId=jmonkeyengine3 -DgroupId=org.jmonkeyengine.jme3 -Dpackaging=jar -Dfile=jMonkeyEngine3.jar -Dversion=${jme.version}" />
+	</exec>
+	<exec dir="${location}" executable="${maven}" output="${location}/mvn_install.log" append="true">
+		<arg line="install:install-file -DartifactId=lwjgl -DgroupId=org.jmonkeyengine.jme3 -Dpackaging=jar -Dfile=lib/lwjgl.jar -Dversion=${jme.version}" />
+	</exec>
+	<exec dir="${location}" executable="${maven}" output="${location}/mvn_install.log" append="true">
+		<arg line="install:install-file -DartifactId=lwjgl_natives -DgroupId=org.jmonkeyengine.jme3 -Dpackaging=jar -Dfile=lib/jME3-lwjgl-natives.jar -Dversion=${jme.version}" />
+	</exec>
+	-->
+</target>
+</project>

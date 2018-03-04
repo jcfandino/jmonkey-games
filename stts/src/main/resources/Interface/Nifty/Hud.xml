@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nifty xmlns="http://nifty-gui.sourceforge.net/nifty-1.3.xsd"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://nifty-gui.sourceforge.net/nifty-1.3.xsd http://nifty-gui.sourceforge.net/nifty-1.3.xsd">
+    <!-- +++++++++++++++++++++++++++++++++++++++ -->
+    <!-- start screen -->
+    <!-- +++++++++++++++++++++++++++++++++++++++ -->
+    <screen id="start" controller="mygame.Main">
+       <layer id="layer" backgroundColor="#0000" childLayout="center">
+            
+            </layer>
+        </screen>
+        <screen id="hud" controller="com.stovokor.state.HudController">
+        <layer id="layer" backgroundColor="#0000" childLayout="center">
+            <!-- Top info bar-->
+            <panel id="top-bar" height="20px" width="100%" align="center" valign="top" backgroundColor="#0000" childLayout="center">
+                <panel id="tb-paddingl" height="20px" width="5%" align="left" valign="top" backgroundColor="#0000" childLayout="center"/>
+                <panel id="tb-area" height="20px" width="90%" align="center" valign="bottom" backgroundColor="#0000" childLayout="center">
+                    <panel id="tb-info" height="20px" width="60%" align="left" valign="top" backgroundColor="#0000" childLayout="center">
+                        <text id="info-label" font="Interface/Fonts/Orbitron-small.fnt" color="#ffff" text="Picked up shells" align="left" valign="center" />
+<!--                         <text id="info-label" font="Interface/Fonts/icons.fnt" color="#ffff" text="abcdefghijklmnopqrstuvwxyz" align="left" valign="center" /> -->
+                    </panel>
+                    <panel id="tb-level" height="20px" width="30%" align="right" valign="top" backgroundColor="#0000" childLayout="center">
+                        <text id="level-label" font="Interface/Fonts/Orbitron-small.fnt" color="#ffff" text="R01L01" align="right" valign="center" />
+                    </panel>
+                </panel>
+                <panel id="tb-paddingr" height="20px" width="5%" align="right" valign="top" backgroundColor="#0000" childLayout="center"/>
+            </panel>
+            <!-- Ammo inventory list -->
+            <panel id="ammo-bar" height="50%" width="70px" align="right" valign="center" backgroundColor="#0000" childLayout="horizontal">
+                <panel id="ammo-area" height="100%" width="90%" align="left" valign="center" backgroundColor="#0000" childLayout="vertical">
+                    <panel id="ammo-pistol" height="20px" width="100%" align="right" valign="center" backgroundColor="#0000" childLayout="center">
+                        <text id="pistol-bullet-label" font="Interface/Fonts/Orbitron-small.fnt" color="#ffff" text="100" align="left" valign="center" />
+                        <text id="pistol-bullet-icon" font="Interface/Fonts/icons.fnt" color="#ffff" text="a" align="right" valign="center" />
+                    </panel>
+                    <panel id="ammo-shells" height="20px" width="100%" align="right" valign="center" backgroundColor="#0000" childLayout="center">
+                        <text id="shell-label" font="Interface/Fonts/Orbitron-small.fnt" color="#ffff" text="100" align="left" valign="center" />
+                        <text id="shell-icon" font="Interface/Fonts/icons.fnt" color="#ffff" text="b" align="right" valign="center" />
+                    </panel>
+                    <panel id="ammo-rifle" height="20px" width="100%" align="right" valign="center" backgroundColor="#0000" childLayout="center">
+                        <text id="rifle-bullet-label" font="Interface/Fonts/Orbitron-small.fnt" color="#ffff" text="100" align="left" valign="center" />
+                        <text id="rifle-bullet-icon" font="Interface/Fonts/icons.fnt" color="#ffff" text="c" align="right" valign="center" />
+                    </panel>
+                    <panel id="ammo-rocket" height="20px" width="100%" align="right" valign="center" backgroundColor="#0000" childLayout="center">
+                        <text id="rocket-label" font="Interface/Fonts/Orbitron-small.fnt" color="#ffff" text="100" align="left" valign="center" />
+                        <text id="rocket-icon" font="Interface/Fonts/icons.fnt" color="#ffff" text="d" align="right" valign="center" />
+                    </panel>
+                    <panel id="ammo-energy" height="20px" width="100%" align="right" valign="center" backgroundColor="#0000" childLayout="center">
+                        <text id="energy-label" font="Interface/Fonts/Orbitron-small.fnt" color="#ffff" text="100" align="left" valign="center" />
+                        <text id="energy-icon" font="Interface/Fonts/icons.fnt" color="#ffff" text="e" align="right" valign="center" />
+                    </panel>
+                </panel>
+                <panel id="ab-paddingr" height="100px" width="10%" align="right" valign="center" backgroundColor="#0000" childLayout="center"/>
+            </panel>
+            <!-- Bottom main bar-->
+            <panel id="main-bar" height="50px" width="100%" align="center" valign="bottom" backgroundColor="#0000" childLayout="center">
+                <panel id="main-left" height="50px" width="30%" align="left" valign="bottom" backgroundColor="#0000" childLayout="horizontal">
+                    <panel id="mb-paddingl" height="50px" width="5%" align="left" valign="bottom" backgroundColor="#0000" childLayout="center"/>
+                    <!--Health-->
+                    <panel id="health-panel" height="50px" width="100px" align="left" valign="bottom" backgroundColor="#0000" childLayout="center">
+                        <text id="health-icon" font="Interface/Fonts/icons.fnt" color="#ffff" text="H" align="left" valign="center" />
+                        <text id="health-label" font="Interface/Fonts/Orbitron-med.fnt" color="#ffff" text="100" align="right" valign="center" />
+                    </panel>
+                    <panel id="mb-paddingm1" height="50px" width="15%" align="left" valign="bottom" backgroundColor="#0000" childLayout="center"/>
+                </panel>
+                <panel id="main-center" height="50px" width="40%" align="center" valign="bottom" backgroundColor="#0000" childLayout="horizontal">
+                    <!--Armor-->
+                    <panel id="armor-panel" height="50px" width="100px" align="left" valign="bottom" backgroundColor="#0000" childLayout="center">
+                        <text id="armor-icon" font="Interface/Fonts/icons.fnt" color="#ffff" text="R" align="left" valign="center" />
+                        <text id="armor-label" font="Interface/Fonts/Orbitron-med.fnt" color="#ffff" text="100" align="right" valign="center" />
+                    </panel>
+                    <!-- Keys -->
+                    <panel id="mb-paddingm2" height="50px" width="5%" align="left" valign="bottom" backgroundColor="#0000" childLayout="center"/>
+                    <panel id="keys-panel" height="80%" width="100px" align="left" valign="center" backgroundColor="#0000" childLayout="horizontal">
+                        <panel id="keys-area-1" height="50%" width="25px" align="center" valign="center" backgroundColor="#0000" childLayout="center">
+                            <text id="key3-icon" font="Interface/Fonts/icons.fnt" color="#ffff" text=" " align="left" valign="center" />
+                        </panel>
+                        <panel id="keys-area-2" height="50%" width="25px" align="center" valign="center" backgroundColor="#0000" childLayout="center">
+                            <text id="key2-icon" font="Interface/Fonts/icons.fnt" color="#ffff" text=" " align="left" valign="center" />
+                        </panel>
+                        <panel id="keys-area-3" height="50%" width="25px" align="center" valign="center" backgroundColor="#0000" childLayout="center">
+                            <text id="key1-icon" font="Interface/Fonts/icons.fnt" color="#ffff" text=" " align="left" valign="center" />
+                        </panel>
+                        <panel id="keys-area-4" height="50%" width="25px" align="center" valign="center" backgroundColor="#0000" childLayout="center">
+                            <text id="key4-icon" font="Interface/Fonts/icons.fnt" color="#ffff" text=" " align="left" valign="center" />
+                        </panel>
+                    </panel>
+                </panel>
+                <panel id="main-right" height="50px" width="30%" align="right" valign="bottom" backgroundColor="#0000" childLayout="horizontal">
+                    <!--Ammo-->
+                    <panel id="ammo-area" height="50px" width="83%" align="right" valign="bottom" backgroundColor="#0000" childLayout="center">
+                        <panel id="ammo-panel" height="50px" width="100px" align="right" valign="bottom" backgroundColor="#0000" childLayout="center">
+                            <text id="ammo-icon" font="Interface/Fonts/icons.fnt" color="#ffff" text="A" align="left" valign="center" />
+                            <text id="ammo-label" font="Interface/Fonts/Orbitron-med.fnt" color="#ffff" text="100" align="right" valign="center" />
+                        </panel>
+                    </panel>
+                    <panel id="mb-paddingr" height="50px" width="17%" align="right" valign="bottom" backgroundColor="#0000" childLayout="center"/>
+                </panel>
+            </panel>
+        </layer>
+    </screen>
+</nifty>

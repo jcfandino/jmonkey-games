@@ -1,0 +1,6 @@
+checksum-3.1.0-stable.txt eb714a47f59542ec236e3b5272ea2833 libbulletjme.so
+checksum-3.2.0-alpha1.txt 41b582fc7a9434fc7e5dc832f1f57e38 libbulletjme.so
+checksum-3.2.0-beta1.txt 41b582fc7a9434fc7e5dc832f1f57e38 libbulletjme.so
+checksum-3.2.0-sdk.txt 618ec47e907311c282b3a6d37eb18898 libbulletjme.so
+checksum-3.2.0-stable.txt 41b582fc7a9434fc7e5dc832f1f57e38 libbulletjme.so
+checksum-3.2.1-stable.txt 41b582fc7a9434fc7e5dc832f1f57e38 libbulletjme.so

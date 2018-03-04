@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.jmonkeyengine.libs</groupId>
+  <artifactId>jme3-testdata</artifactId>
+  <versioning>
+    <release>3.1.0-stable</release>
+    <versions>
+      <version>3.1.0-stable</version>
+    </versions>
+    <lastUpdated>20170216211911</lastUpdated>
+  </versioning>
+</metadata>
